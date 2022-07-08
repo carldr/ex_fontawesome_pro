@@ -1,7 +1,7 @@
-defmodule FontAwesome.Surface.IconTest do
-  use FontAwesome.ConnCase, async: true
+defmodule FontAwesomePro.Surface.IconTest do
+  use FontAwesomePro.ConnCase, async: true
 
-  alias FontAwesome.Surface.Icon
+  alias FontAwesomePro.Surface.Icon
 
   defmodule ViewWithIcon do
     use Surface.LiveView
@@ -14,7 +14,7 @@ defmodule FontAwesome.Surface.IconTest do
 
     def render(assigns) do
       ~F"""
-      <Icon name="address-book" type="regular" opts={aria_hidden: @aria_hidden} />
+      <Icon name="rocket-launch" type="regular" opts={aria_hidden: @aria_hidden} />
       """
     end
   end
@@ -23,7 +23,7 @@ defmodule FontAwesome.Surface.IconTest do
     html =
       render_surface do
         ~F"""
-        <Icon name="address-book" type="regular" />
+        <Icon name="rocket-launch" type="regular" />
         """
       end
 
@@ -34,7 +34,7 @@ defmodule FontAwesome.Surface.IconTest do
     html =
       render_surface do
         ~F"""
-        <Icon name="address-book" type="regular" class="h-4 w-4" />
+        <Icon name="rocket-launch" type="regular" class="h-4 w-4" />
         """
       end
 
@@ -45,7 +45,7 @@ defmodule FontAwesome.Surface.IconTest do
     html =
       render_surface do
         ~F"""
-        <Icon name="address-book" type="regular" opts={aria_hidden: true} />
+        <Icon name="rocket-launch" type="regular" opts={aria_hidden: true} />
         """
       end
 
@@ -56,7 +56,7 @@ defmodule FontAwesome.Surface.IconTest do
     html =
       render_surface do
         ~F"""
-        <Icon name="address-book" type="regular" class="hello" opts={class: "world"} />
+        <Icon name="rocket-launch" type="regular" class="hello" opts={class: "world"} />
         """
       end
 
@@ -88,12 +88,12 @@ defmodule FontAwesome.Surface.IconTest do
   end
 
   test "raises if icon type does not exist" do
-    msg = ~s(expected type to be one of #{inspect(FontAwesome.types())}, got: "world")
+    msg = ~s(expected type to be one of #{inspect(FontAwesomePro.types())}, got: "world")
 
     assert_raise ArgumentError, msg, fn ->
       render_surface do
         ~F"""
-        <Icon name="address-book" type="world" />
+        <Icon name="rocket-launch" type="world" />
         """
       end
     end
@@ -112,18 +112,18 @@ defmodule FontAwesome.Surface.IconTest do
   end
 end
 
-defmodule FontAwesome.Surface.IconConfigTest do
-  use FontAwesome.ConnCase
+defmodule FontAwesomePro.Surface.IconConfigTest do
+  use FontAwesomePro.ConnCase
 
-  alias FontAwesome.Surface.Icon
+  alias FontAwesomePro.Surface.Icon
 
   test "renders icon with default type" do
-    Application.put_env(:ex_fontawesome, :type, "regular")
+    Application.put_env(:ex_fontawesome_pro, :type, "regular")
 
     html =
       render_surface do
         ~F"""
-        <Icon name="address-book" />
+        <Icon name="rocket-launch" />
         """
       end
 
@@ -131,14 +131,14 @@ defmodule FontAwesome.Surface.IconConfigTest do
   end
 
   test "raises if default icon type does not exist" do
-    Application.put_env(:ex_fontawesome, :type, "world")
+    Application.put_env(:ex_fontawesome_pro, :type, "world")
 
-    msg = ~s(expected default type to be one of #{inspect(FontAwesome.types())}, got: "world")
+    msg = ~s(expected default type to be one of #{inspect(FontAwesomePro.types())}, got: "world")
 
     assert_raise ArgumentError, msg, fn ->
       render_surface do
         ~F"""
-        <Icon name="address-book" />
+        <Icon name="rocket-launch" />
         """
       end
     end

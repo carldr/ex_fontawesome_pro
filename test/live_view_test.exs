@@ -1,8 +1,8 @@
-defmodule FontAwesome.LiveViewTest do
-  use FontAwesome.ConnCase, async: true
+defmodule FontAwesomePro.LiveViewTest do
+  use FontAwesomePro.ConnCase, async: true
   import Phoenix.LiveView.Helpers
 
-  alias FontAwesome.LiveView
+  alias FontAwesomePro.LiveView
 
   # https://github.com/phoenixframework/phoenix_live_view/blob/0de8d273f0e1024c008653c722f15e88dc3d0c6b/test/phoenix_component_test.exs#L6
   defp h2s(template) do
@@ -24,7 +24,7 @@ defmodule FontAwesome.LiveViewTest do
 
     def render(assigns) do
       ~H"""
-      <LiveView.icon name="address-book" type="regular" opts={[aria_hidden: @aria_hidden]} />
+      <LiveView.icon name="rocket-launch" type="regular" opts={[aria_hidden: @aria_hidden]} />
       """
     end
   end
@@ -34,7 +34,7 @@ defmodule FontAwesome.LiveViewTest do
 
     html =
       h2s(~H"""
-      <LiveView.icon name="address-book" type="regular" />
+      <LiveView.icon name="rocket-launch" type="regular" />
       """)
 
     assert html =~ "<svg"
@@ -45,7 +45,7 @@ defmodule FontAwesome.LiveViewTest do
 
     html =
       h2s(~H"""
-      <LiveView.icon name="address-book" type="regular" class="h-4 w-4" />
+      <LiveView.icon name="rocket-launch" type="regular" class="h-4 w-4" />
       """)
 
     assert html =~ ~s(<svg class="h-4 w-4")
@@ -56,7 +56,7 @@ defmodule FontAwesome.LiveViewTest do
 
     html =
       h2s(~H"""
-      <LiveView.icon name="address-book" type="regular" opts={[aria_hidden: true]} />
+      <LiveView.icon name="rocket-launch" type="regular" opts={[aria_hidden: true]} />
       """)
 
     assert html =~ ~s(<svg aria-hidden="true")
@@ -67,7 +67,7 @@ defmodule FontAwesome.LiveViewTest do
 
     html =
       h2s(~H"""
-      <LiveView.icon name="address-book" type="regular" class="hello" opts={[class: "world"]} />
+      <LiveView.icon name="rocket-launch" type="regular" class="hello" opts={[class: "world"]} />
       """)
 
     assert html =~ ~s(<svg class="hello")
@@ -97,11 +97,11 @@ defmodule FontAwesome.LiveViewTest do
 
   test "raises if icon type does not exist" do
     assigns = %{}
-    msg = ~s(expected type to be one of #{inspect(FontAwesome.types())}, got: "world")
+    msg = ~s(expected type to be one of #{inspect(FontAwesomePro.types())}, got: "world")
 
     assert_raise ArgumentError, msg, fn ->
       h2s(~H"""
-      <LiveView.icon name="address-book" type="world" />
+      <LiveView.icon name="rocket-launch" type="world" />
       """)
     end
   end
@@ -119,11 +119,11 @@ defmodule FontAwesome.LiveViewTest do
   end
 end
 
-defmodule FontAwesome.LiveViewConfigTest do
-  use FontAwesome.ConnCase
+defmodule FontAwesomePro.LiveViewConfigTest do
+  use FontAwesomePro.ConnCase
   import Phoenix.LiveView.Helpers
 
-  alias FontAwesome.LiveView
+  alias FontAwesomePro.LiveView
 
   # https://github.com/phoenixframework/phoenix_live_view/blob/0de8d273f0e1024c008653c722f15e88dc3d0c6b/test/phoenix_component_test.exs#L6
   defp h2s(template) do
@@ -133,27 +133,27 @@ defmodule FontAwesome.LiveViewConfigTest do
   end
 
   test "renders icon with default type" do
-    Application.put_env(:ex_fontawesome, :type, "regular")
+    Application.put_env(:ex_fontawesome_pro, :type, "regular")
 
     assigns = %{}
 
     html =
       h2s(~H"""
-      <LiveView.icon name="address-book" />
+      <LiveView.icon name="rocket-launch" />
       """)
 
     assert html =~ "<svg"
   end
 
   test "raises if default icon type does not exist" do
-    Application.put_env(:ex_fontawesome, :type, "world")
+    Application.put_env(:ex_fontawesome_pro, :type, "world")
 
     assigns = %{}
-    msg = ~s(expected default type to be one of #{inspect(FontAwesome.types())}, got: "world")
+    msg = ~s(expected default type to be one of #{inspect(FontAwesomePro.types())}, got: "world")
 
     assert_raise ArgumentError, msg, fn ->
       h2s(~H"""
-      <LiveView.icon name="address-book" />
+      <LiveView.icon name="rocket-launch" />
       """)
     end
   end

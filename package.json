@@ -1,7 +1,7 @@
 {
-  "name": "ex_fontawesome",
-  "version": "0.7.1",
-  "description": "ex_fontawesome",
+  "name": "ex_fontawesome_pro",
+  "version": "0.0.1",
+  "description": "ex_fontawesome_pro",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.1"
+    "@fortawesome/fontawesome-pro": "^6.1.1"
   }
 }

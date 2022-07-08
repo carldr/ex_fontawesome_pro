@@ -1,11 +1,11 @@
-defmodule ExFontawesome.MixProject do
+defmodule ExFontawesomePro.MixProject do
   use Mix.Project
 
-  @version "0.7.1"
+  @version "0.0.1"
 
   def project do
     [
-      app: :ex_fontawesome,
+      app: :ex_fontawesome_pro,
       version: @version,
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -14,7 +14,7 @@ defmodule ExFontawesome.MixProject do
       docs: docs(),
       description: description(),
       package: package(),
-      source_url: "https://github.com/miguel-s/ex_fontawesome"
+      source_url: "https://github.com/carldr/ex_fontawesome_pro"
     ]
   end
 
@@ -39,16 +39,16 @@ defmodule ExFontawesome.MixProject do
 
   defp docs do
     [
-      main: "FontAwesome",
+      main: "FontAwesome Pro",
       source_ref: "v#{@version}",
-      source_url: "https://github.com/miguel-s/ex_fontawesome",
+      source_url: "https://github.com/carldr/ex_fontawesome_pro",
       groups_for_modules: [
-        Liveview: ~r/FontAwesome.LiveView/,
-        Surface: ~r/FontAwesome.Surface/
+        Liveview: ~r/FontAwesomePro.LiveView/,
+        Surface: ~r/FontAwesomePro.Surface/
       ],
       nest_modules_by_prefix: [
-        FontAwesome.LiveView,
-        FontAwesome.Surface
+        FontAwesomePro.LiveView,
+        FontAwesomePro.Surface
       ],
       extras: ["README.md"]
     ]
@@ -56,7 +56,7 @@ defmodule ExFontawesome.MixProject do
 
   defp description() do
     """
-    This package adds a convenient way of using Font Awesome SVGs with your Phoenix, Phoenix LiveView and Surface applications.
+    This package adds a convenient way of using Font Awesome Pro SVGs with your Phoenix, Phoenix LiveView and Surface applications.
     """
   end
 
@@ -64,7 +64,7 @@ defmodule ExFontawesome.MixProject do
     %{
       files: ~w(lib node_modules .formatter.exs mix.exs README* LICENSE* CHANGELOG*),
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/miguel-s/ex_fontawesome"}
+      links: %{"GitHub" => "https://github.com/carldr/ex_fontawesome_pro"}
     }
   end
 end
