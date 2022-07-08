@@ -12,10 +12,7 @@ defmodule FontAwesomePro do
 
       def deps do
         [
-          {
-            :ex_fontawesome_pro,
-            git: "https://github.com/carldr/ex_fontawesome_pro",
-          }
+          {:ex_fontawesome_pro, git: "https://github.com/carldr/ex_fontawesome_pro"}
         ]
       end
 
@@ -28,7 +25,10 @@ defmodule FontAwesomePro do
   Replacing `...token...` with your token.  See https://fontawesome.com/docs/web/setup/packages
   for details.
 
-  You can then compile your app and enjoy pro icons!
+  Then this is a bit of a hack - you need to remove your `_build` directory so ex_fontawesome_pro
+  is rebuilt with the icons you've just downloaded.
+
+  But once you have, you can compile your app and enjoy pro icons!
 
   ## Usage
 
