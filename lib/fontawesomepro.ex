@@ -20,7 +20,11 @@ defmodule FontAwesomePro do
 
   You then need to get the icons from Font Awesome, so we can build ex_fontawesome_pro :
 
-  FONTAWESOME_NPM_AUTH_TOKEN=...token... EX_FONTAWESOME_PRO=deps/ex_fontawesome_pro mix ex_fontawesome_pro
+  ```
+  FONTAWESOME_NPM_AUTH_TOKEN=...token... \
+  EX_FONTAWESOME_PRO=deps/ex_fontawesome_pro \
+  mix ex_fontawesome_pro
+  ```
 
   Replacing `...token...` with your token.  See https://fontawesome.com/docs/web/setup/packages
   for details.
