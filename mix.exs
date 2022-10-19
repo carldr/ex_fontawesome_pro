@@ -32,7 +32,7 @@ defmodule ExFontawesomePro.MixProject do
       {:phoenix_html, "~> 3.2"},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false},
       {:floki, ">= 0.32.0", only: :test},
-      {:phoenix_live_view, "~> 0.17", optional: true},
+      {:phoenix_live_view, "~> 0.18", optional: true},
       {:surface, "~> 0.7", optional: true}
     ]
   end
