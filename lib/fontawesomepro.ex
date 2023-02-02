@@ -4,7 +4,7 @@ defmodule FontAwesomePro do
 
   You can find the original docs [here](https://fontawesome.com) and repo [here](https://github.com/FortAwesome/Font-Awesome).
 
-  Current FontAwesome version: 6.1.1
+  Current FontAwesome version: 6.2.1
 
   ## Installation
 

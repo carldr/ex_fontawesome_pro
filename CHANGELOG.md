@@ -1,5 +1,9 @@
 # FontAwesome Pro Changelog
 
+## v0.0.2 (2023-02-02)
+
+- Allow use of FontAwesome Pro v6.2.1
+
 ## v0.0.1 (2022-07-08)
 
 - Allow use of FontAwesome Pro v6.1.1
