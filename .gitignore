@@ -1,5 +1,4 @@
 # Don't accidentally commit our token for npm access - or the pro icons themselves - to the pro icons
-.npmrc
 node_modules
 
 # The directory Mix will write compiled artifacts to.
